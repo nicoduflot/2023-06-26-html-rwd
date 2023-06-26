@@ -1,0 +1,54 @@
+/*
+Unités de dimension les plus utilisés en web
+
+px          =>  Pixel
+em          =>  cadratin : unité de mesure en print sur les presses. 
+                le cadratin se calcul part rapport à la taille de la police dans l'élément parent
+rem         =>  cadratin racine : se calcul part rapport à la taille de la police dans l'élément racine
+%           =>  Pourcentage, de l'espace disponible autour de l'élément
+vw & vh     =>  vw : viewport widthn; vh : viewport height
+
+*/
+
+/* déclaration racine : root */
+
+/* on a généralement quelques règles CSS en début de fichier pour gérer certains réglages par défaut des navigateurs */
+/* déclarations générales */
+*{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* classes */
+
+.content-width{
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+.border-width{
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.deuxEm{
+    font-size: 2em;
+}
+
+.deuxRem{
+    font-size: 2rem;
+}
+
+body{
+    margin: 0;
+}
+
+/* structure */
+

@@ -8,6 +8,7 @@
     <title>&copy;DAWAN Formation, HTML5 CSS3, RWD | Le site fait durant la formation Webmaster Intermédiaire chez DAWAN</title>
     <!-- Commentaires en HTML -->
     <!-- C'est dans la balise head qu'on va appeler les CSS et écrire ou appeler les fichiers script JS -->
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
     <header>
@@ -99,7 +100,35 @@ quod tempore. Ducimus, modi.
                     <h2>Les médias images</h2>
                 </header>
                 <main>
-
+                    <p>
+                        Par défaut, on utlise la balise <code>&lt;img src="" alt="" /&gt;</code>
+                        <img src="./images/Batman-The-animated-serie.jpg" alt="image de batman" />
+                    </p>
+                    <p>
+                        Depuis HTML5, il existe des balises qui permettent de "préparer" le terrain aux images, des conteneurs qui encapsuleront l'image et donneront aussi la possibilité d'avoir une légende associée à l'image.
+                    </p>
+                    <figure>
+                        <img src="./images/260px-Bruce_Timm_by_Gage_Skidmore.jpg" alt="Bruce Timm" />
+                        <figcaption>
+                            Bruce Timm à la comicon San Diego sur le remake de Batman the animated series
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Une autre balise permet des affichage d'image selon l'affichage de l'appareil : <code>&lt;picture&gt;</code>.
+                    </p>
+                    <picture>
+                        <source 
+                            srcset="./images/260px-Bruce_Timm_by_Gage_Skidmore.jpg" 
+                            media="(min-width: 540px)">
+                            <img src="./images/10.12.12TerryPratchettByLuigiNovi1.jpg" />
+                    </picture>
+                    <p>
+                        par défaut les images d'affiche au maximum de leur largeur et hauteur. Si on change la hauteur et la largeur sans garder l'homothétie, l'image sera écraée en hauteur ou en largeur.
+                    </p>
+                    <img src="./images/batman_tas.jpg" width="200" />
+                    <p>
+                        en revanche, si on ne donne que la hauteur ou que la largeur, le navigateur s'occupe de calculer l'homothétie.
+                    </p>
                 </main>
                 <footer>
                     <a href="./article.html"><button>Lire +</button></a>
@@ -107,21 +136,23 @@ quod tempore. Ducimus, modi.
             </article>
             <article>
                 <header>
-                    <h2>Les médias audio / vidéos</h2>
+                    <h2>Problèmes courant en CSS</h2>
                 </header>
                 <main>
-
-                </main>
-                <footer>
-                    <a href="./article.html"><button>Lire +</button></a>
-                </footer>
-            </article>
-            <article>
-                <header>
-                    <h2>Les médias hébergés sur sites tiers</h2>
-                </header>
-                <main>
-
+                    <p>
+                        Les tailles des éléments sont définis par défaut sur le contenu des éléments, c'est à dirs que si je défini une div des 200px de large, avec une marge intérieure de 10px et une pordure de 1px de large, la place totle de l'élément sur l'écran sera de : 
+                        200px + 10px + 10px + 1px + 1px (contenu + marge intérieur gauche + marge intérieur droite + largeur bordure à gauche + largeur bordure à droite ) => 222px.<br />
+                        c'est la propriété css box-sizing qui est à 'content-box' par défaut.<br />
+                        Pour éviter cela, on appliquera 'border-box' à tous les éléments grace au caractère spécial * dans la déclaration CSS.
+                    </p>
+                    <div class="content-width">
+                        Content box : <br />
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis commodi vel dolores esse incidunt sed tenetur quia qui accusantium placeat? Quam eius exercitationem sapiente, impedit tempore ipsam dolores fuga. Pariatur.
+                    </div>
+                    <div class="border-width">
+                        Border box : <br />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsam molestias architecto cumque, eveniet est, iure laborum similique inventore corporis facere sint itaque sed saepe nihil minus modi quam. Fugit.
+                    </div>
                 </main>
                 <footer>
                     <a href="./article.html"><button>Lire +</button></a>
