@@ -40,10 +40,14 @@ img{
 
 .deuxEm{
     font-size: 2em;
+    margin: 2px;
+    border: 1px solid black;
 }
 
 .deuxRem{
     font-size: 2rem;
+    margin: 2px;
+    border: 1px solid black;
 }
 
 body{
