@@ -1,3 +1,4 @@
+@import url('./edosz.css');
 /*
 Unités de dimension les plus utilisés en web
 
@@ -12,6 +13,20 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
 
 /* déclaration racine : root */
 
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    /* on peut créer des variables en CSS */
+    --heading-font: 'edosz';
+    --site-background: white;
+    --site-primary-color: black;
+    --site-header-background: black;
+    --site-header-color: white;
+    --site-footer-background: var(--site-header-background);
+    --site-footer-color: var(--site-header-color);
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
 /* on a généralement quelques règles CSS en début de fichier pour gérer certains réglages par défaut des navigateurs */
 /* déclarations générales */
 *{
@@ -20,6 +35,10 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
 
 img{
     max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--heading-font);
 }
 
 /* classes */
@@ -52,7 +71,20 @@ img{
 
 body{
     margin: 0;
+    background-color: var(--site-background);
+    color: var(--site-primary-color);
 }
 
 /* structure */
 
+body > header{
+    background-color: var(--site-header-background);
+    color: var(--site-header-color);
+}
+
+
+
+body > footer{
+    background-color: var(--site-footer-background);
+    color: var(--site-footer-color);
+}
