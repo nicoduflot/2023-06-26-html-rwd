@@ -21,7 +21,7 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
     --heading-font: 'edosz';
     --site-background: white;
     --site-primary-color: black;
-    --site-header-background: black;
+    --site-header-background: rgba(0, 0, 0, 1);
     --site-header-color: white;
     --nav-link-background: var(--site-header-background);
     --nav-link-color: var(--site-header-color);
@@ -30,6 +30,7 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
     --goutiere-article: 0.5rem;
     --button-link-background: var(--site-header-color);
     --button-link-color: var(--site-header-background);
+    --site-background-25: rgba(0, 0, 0, 0.25);
     font-size: 1.1rem;
     line-height: 1.6rem;
     --swiper-theme-color: var(--site-header-background);
@@ -111,6 +112,10 @@ b, strong{
 .swiper-slide img{
     max-height: 400px;
     margin-bottom: 1.5rem;
+}
+
+.information{
+    background-color: var(--site-background-25);
 }
 
 /*
@@ -286,7 +291,7 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
         width: var(--colonne-1-1);
     }
 
-    body > main > section > article:last-child:nth-of-type(3n + 1) main{
+    body > main > section > article:last-child:nth-of-type(3n + 1) main:not(body > main > section > article:last-child:nth-of-type(3n + 1) main.article){
         columns: 3;
     }
 
