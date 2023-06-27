@@ -1,4 +1,6 @@
 @import url('./edosz.css');
+@import url('./RobotoRegular.css');
+@import url('./RobotoBold.css');
 /*
 Unités de dimension les plus utilisés en web
 
@@ -14,7 +16,7 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
 /* déclaration racine : root */
 
 :root{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'RobotoRegular', Arial, Helvetica, sans-serif;
     /* on peut créer des variables en CSS */
     --heading-font: 'edosz';
     --site-background: white;
@@ -23,6 +25,7 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
     --site-header-color: white;
     --site-footer-background: var(--site-header-background);
     --site-footer-color: var(--site-header-color);
+    --goutiere-article: 0.5rem;
     font-size: 1.1rem;
     line-height: 1.6rem;
 }
@@ -39,6 +42,11 @@ img{
 
 h1, h2, h3, h4, h5, h6{
     font-family: var(--heading-font);
+    margin: 0;
+}
+
+b, strong{
+    font-family: 'RobotoBold';
 }
 
 /* classes */
@@ -69,20 +77,44 @@ h1, h2, h3, h4, h5, h6{
     border: 1px solid black;
 }
 
+.header, .footer, body section article{
+    padding: var(--goutiere-article);
+}
+
+.conteneur{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+.footer{
+    
+}
+*/
+
+/* structure */
 body{
     margin: 0;
     background-color: var(--site-background);
     color: var(--site-primary-color);
 }
 
-/* structure */
-
 body > header{
     background-color: var(--site-header-background);
     color: var(--site-header-color);
 }
 
+body > nav ul{
+    list-style-type:none;
+    padding: 0;
+    margin: 0.5rem;
+    line-height: 2rem;
+}
 
+body > nav ul li a{
+    display: block;
+}
 
 body > footer{
     background-color: var(--site-footer-background);
