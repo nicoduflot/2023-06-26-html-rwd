@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.5" />
     <meta keywords="Formation, HTML5 CSS3, RWD" />
     <meta description="Le site fait durant la formation Webmaster Intermédiaire chez DAWAN " />
-    <title>&copy;DAWAN Formation, HTML5 CSS3, RWD | Le site fait durant la formation Webmaster Intermédiaire chez DAWAN</title>
+    <title>&copy;DAWAN Formation, HTML5 CSS3, RWD | Le site fait durant la formation Webmaster Intermédiaire chez DAWAN
+    </title>
     <!-- Commentaires en HTML -->
     <!-- C'est dans la balise head qu'on va appeler les CSS et écrire ou appeler les fichiers script JS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.css" />
+    <script src="./js/swiper-bundle.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+        });
+    </script>
 </head>
+
 <body>
     <header>
         <div class="header conteneur">
@@ -19,8 +49,8 @@
     <nav>
         <div class="conteneur">
             <ul>
-                <li><a href="./" >Accueil</a></li>
-                <li><a href="./article.html" >Article</a></li>
+                <li><a href="./">Accueil</a></li>
+                <li><a href="./article.html">Article</a></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <li><a href="./media.html">Media</a></li>
                 <li><a href="./animation.html">Animations CSS</a></li>
@@ -31,6 +61,37 @@
         </div>
     </nav>
     <main class="conteneur">
+        <section class="carousel">
+            <h2>Nos dernières images</h2>
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper center-swiper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="./images/doc-signal.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/dolf-signal.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/drive-signal.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/james-white-composite.jpg" />
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
         <section>
             <article>
                 <header>
@@ -38,30 +99,40 @@
                 </header>
                 <main>
                     <p>
-                        Le texte doit toujours être compris dans des balises de contenus de type paragraphes, comme des bloc de citation, tu texte préformaté, etc.<br />
+                        Le texte doit toujours être compris dans des balises de contenus de type paragraphes, comme des
+                        bloc de citation, tu texte préformaté, etc.<br />
                         La balise <code>&lt;br /&gt;</code> permet un retour chariot au sein d'un paragraphe.
                     </p>
                     <p>
-                        Les balises de contenus peuvent être en affichage bloc <code>display: block</code>, c'est à dire qu'elles prennent tout l'espace disponible en largeur, et d'autre qui don <code>inline</code>, elle "entourent" le contenu et servent a appliquer des styles CSS, soit prédéterminés comme <code>&lt;code&gt;</code> ou <code>&lt;b&gt;</code>, etc.
+                        Les balises de contenus peuvent être en affichage bloc <code>display: block</code>, c'est à dire
+                        qu'elles prennent tout l'espace disponible en largeur, et d'autre qui don <code>inline</code>,
+                        elle "entourent" le contenu et servent a appliquer des styles CSS, soit prédéterminés comme
+                        <code>&lt;code&gt;</code> ou <code>&lt;b&gt;</code>, etc.
                     </p>
                     <p>
-                        Attention, des balises pour écrire en gras ou en italique, il en existe plusieurs, et c'est la porté référencement qui sera impacté.
+                        Attention, des balises pour écrire en gras ou en italique, il en existe plusieurs, et c'est la
+                        porté référencement qui sera impacté.
                     </p>
                     <p>
-                        Soit on utilise <b><code>&lt;b&gt;</code></b>, pour <i>bold</i> (gras) soit on utilise <strong><code>&lt;strong&gt;</code></strong>.
+                        Soit on utilise <b><code>&lt;b&gt;</code></b>, pour <i>bold</i> (gras) soit on utilise
+                        <strong><code>&lt;strong&gt;</code></strong>.
                     </p>
                     <p>
-                        Il existe la même différence entre <i><code>&lt;i&gt;</code></i> (italique) et <em><code>&lt;em&gt;</code></em> (emphase).
+                        Il existe la même différence entre <i><code>&lt;i&gt;</code></i> (italique) et
+                        <em><code>&lt;em&gt;</code></em> (emphase).
                     </p>
                     <blockquote>
-                        <q><cite>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. Harum ipsa fugit molestiae quod,</cite></q><br /> 
-                            nisi consectetur tenetur voluptates vel ab <b>eaque</b> soluta velit commodi eum ipsam nostrum cumque neque dolores cum!
+                        <q><cite>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. Harum ipsa
+                                fugit molestiae quod,</cite></q><br />
+                        nisi consectetur tenetur voluptates vel ab <b>eaque</b> soluta velit commodi eum ipsam nostrum
+                        cumque neque dolores cum!
                     </blockquote>
                     <p>
                         <q>I'm Batman</q>, <cite>The dark knight</cite>
                     </p>
                     <p>
-                        Autrefois, on utilisait la balise <code>&lt;font&gt;</code>, qui est <font color="#8B0000" size="3" face="Arial">décommissionnée</font>
+                        Autrefois, on utilisait la balise <code>&lt;font&gt;</code>, qui est <font color="#8B0000"
+                            size="3" face="Arial">décommissionnée</font>
                     </p>
                 </main>
                 <footer>
@@ -87,10 +158,14 @@ quod tempore. Ducimus, modi.
                         H<sub>2</sub>SO<sub>4</sub><sup>2-</sup>
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet <small>consectetur</small> adipisicing elit. Deserunt eligendi asperiores quos maxime explicabo non nam dolores aliquid molestias vitae harum provident porro, quam corrupti. At esse accusantium consequuntur alias.
+                        Lorem ipsum dolor sit amet <small>consectetur</small> adipisicing elit. Deserunt eligendi
+                        asperiores quos maxime explicabo non nam dolores aliquid molestias vitae harum provident porro,
+                        quam corrupti. At esse accusantium consequuntur alias.
                     </p>
                     <p>
-                        En web, on ne <u>souligne jamais du texte</u> sauf s'il s'agit d'un lien, les visiteurs pourraient confondre avec un lien et tenrer de cliquer dessus, on peut aussi <s>biffer</s> les mots ou les <mark>surligner au marqueur fluo</mark>.
+                        En web, on ne <u>souligne jamais du texte</u> sauf s'il s'agit d'un lien, les visiteurs
+                        pourraient confondre avec un lien et tenrer de cliquer dessus, on peut aussi <s>biffer</s> les
+                        mots ou les <mark>surligner au marqueur fluo</mark>.
                     </p>
                 </main>
                 <footer>
@@ -109,7 +184,9 @@ quod tempore. Ducimus, modi.
                         <img src="./images/Batman-The-animated-serie.jpg" alt="image de batman" />
                     </p>
                     <p>
-                        Depuis HTML5, il existe des balises qui permettent de "préparer" le terrain aux images, des conteneurs qui encapsuleront l'image et donneront aussi la possibilité d'avoir une légende associée à l'image.
+                        Depuis HTML5, il existe des balises qui permettent de "préparer" le terrain aux images, des
+                        conteneurs qui encapsuleront l'image et donneront aussi la possibilité d'avoir une légende
+                        associée à l'image.
                     </p>
                     <figure>
                         <img src="./images/260px-Bruce_Timm_by_Gage_Skidmore.jpg" alt="Bruce Timm" />
@@ -118,20 +195,21 @@ quod tempore. Ducimus, modi.
                         </figcaption>
                     </figure>
                     <p>
-                        Une autre balise permet des affichage d'image selon l'affichage de l'appareil : <code>&lt;picture&gt;</code>.
+                        Une autre balise permet des affichage d'image selon l'affichage de l'appareil :
+                        <code>&lt;picture&gt;</code>.
                     </p>
                     <picture>
-                        <source 
-                            srcset="./images/260px-Bruce_Timm_by_Gage_Skidmore.jpg" 
-                            media="(min-width: 540px)">
-                            <img src="./images/10.12.12TerryPratchettByLuigiNovi1.jpg" />
+                        <source srcset="./images/260px-Bruce_Timm_by_Gage_Skidmore.jpg" media="(min-width: 540px)">
+                        <img src="./images/10.12.12TerryPratchettByLuigiNovi1.jpg" />
                     </picture>
                     <p>
-                        par défaut les images d'affiche au maximum de leur largeur et hauteur. Si on change la hauteur et la largeur sans garder l'homothétie, l'image sera écraée en hauteur ou en largeur.
+                        par défaut les images d'affiche au maximum de leur largeur et hauteur. Si on change la hauteur
+                        et la largeur sans garder l'homothétie, l'image sera écraée en hauteur ou en largeur.
                     </p>
                     <img src="./images/batman_tas.jpg" width="200" />
                     <p>
-                        en revanche, si on ne donne que la hauteur ou que la largeur, le navigateur s'occupe de calculer l'homothétie.
+                        en revanche, si on ne donne que la hauteur ou que la largeur, le navigateur s'occupe de calculer
+                        l'homothétie.
                     </p>
                 </main>
                 <footer>
@@ -144,18 +222,26 @@ quod tempore. Ducimus, modi.
                 </header>
                 <main>
                     <p>
-                        Les tailles des éléments sont définis par défaut sur le contenu des éléments, c'est à dirs que si je défini une div des 200px de large, avec une marge intérieure de 10px et une pordure de 1px de large, la place totle de l'élément sur l'écran sera de : 
-                        200px + 10px + 10px + 1px + 1px (contenu + marge intérieur gauche + marge intérieur droite + largeur bordure à gauche + largeur bordure à droite ) => 222px.<br />
+                        Les tailles des éléments sont définis par défaut sur le contenu des éléments, c'est à dirs que
+                        si je défini une div des 200px de large, avec une marge intérieure de 10px et une pordure de 1px
+                        de large, la place totle de l'élément sur l'écran sera de :
+                        200px + 10px + 10px + 1px + 1px (contenu + marge intérieur gauche + marge intérieur droite +
+                        largeur bordure à gauche + largeur bordure à droite ) => 222px.<br />
                         c'est la propriété css box-sizing qui est à 'content-box' par défaut.<br />
-                        Pour éviter cela, on appliquera 'border-box' à tous les éléments grace au caractère spécial * dans la déclaration CSS.
+                        Pour éviter cela, on appliquera 'border-box' à tous les éléments grace au caractère spécial *
+                        dans la déclaration CSS.
                     </p>
                     <div class="content-width">
                         Content box : <br />
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis commodi vel dolores esse incidunt sed tenetur quia qui accusantium placeat? Quam eius exercitationem sapiente, impedit tempore ipsam dolores fuga. Pariatur.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis commodi vel dolores esse
+                        incidunt sed tenetur quia qui accusantium placeat? Quam eius exercitationem sapiente, impedit
+                        tempore ipsam dolores fuga. Pariatur.
                     </div>
                     <div class="border-width">
                         Border box : <br />
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsam molestias architecto cumque, eveniet est, iure laborum similique inventore corporis facere sint itaque sed saepe nihil minus modi quam. Fugit.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsam molestias architecto
+                        cumque, eveniet est, iure laborum similique inventore corporis facere sint itaque sed saepe
+                        nihil minus modi quam. Fugit.
                     </div>
                 </main>
                 <footer>
@@ -189,4 +275,5 @@ quod tempore. Ducimus, modi.
         </div>
     </footer>
 </body>
+
 </html>
