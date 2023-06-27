@@ -21,11 +21,15 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
     --heading-font: 'edosz';
     --site-background: white;
     --site-primary-color: black;
+    --nav-link-background: black;
+    --nav-link-color: white;
     --site-header-background: black;
     --site-header-color: white;
     --site-footer-background: var(--site-header-background);
     --site-footer-color: var(--site-header-color);
     --goutiere-article: 0.5rem;
+    --button-link-background: white;
+    --button-link-color: black;
     font-size: 1.1rem;
     line-height: 1.6rem;
 }
@@ -43,6 +47,7 @@ img{
 h1, h2, h3, h4, h5, h6{
     font-family: var(--heading-font);
     margin: 0;
+    letter-spacing: 0.08rem;
 }
 
 b, strong{
@@ -105,18 +110,130 @@ body > header{
     color: var(--site-header-color);
 }
 
-body > nav ul{
-    list-style-type:none;
-    padding: 0;
-    margin: 0.5rem;
-    line-height: 2rem;
+body > nav{
+    background-color: var(--nav-link-background);
 }
 
-body > nav ul li a{
+body > nav ul{
+    list-style-type:none;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    margin: 0;
+    line-height: 2.5rem;
+}
+
+body > nav ul li{
+    border-bottom: 1px solid var(--nav-link-color);
+}
+
+body > nav ul li:last-child{
+    border-bottom-color: transparent;
+}
+
+body > nav ul li:last-child:hover{
+    border-bottom-color: var(--nav-link-background);
+}
+
+body > nav ul li a, body > nav ul li a:visited{
     display: block;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    padding-left: 1rem;
+}
+
+body > nav ul li a:hover, body > nav ul li a:focus{
+    color: var(--nav-link-background);
+    background-color: var(--nav-link-color);
+}
+
+body main article footer{
+    text-align: center;
+}
+
+body main article footer button{
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--button-link-color);
+    color: var(--button-link-color);
+    background-color: var(--button-link-background);
+    text-transform: uppercase;
+    font-family: 'RobotoBold';
+}
+
+body main article footer button:hover{
+    color: var(--button-link-background);
+    background-color: var(--button-link-color);
 }
 
 body > footer{
     background-color: var(--site-footer-background);
     color: var(--site-footer-color);
+}
+
+/* 
+media querie : appliquer des style ou des surcharge de style existant selon des paramètres tels que 
+- orientation de l'affichage
+- largeur minimale ou maximale de l'écran
+- affichage pour l'écran ou l'impression
+
+*/
+
+@media print {
+    body > nav, body > footer, button{
+        display: none;
+    }
+
+    body{
+        font-family: serif;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .conteneur{
+        width: 540px;
+    }
+
+    body > nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    body > nav ul li{
+        border-bottom-color: var(--nav-link-background);
+    }
+
+    body > nav ul li a{
+        padding-left: var(--goutiere-article);
+        padding-right: var(--goutiere-article);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .conteneur{
+        width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .conteneur{
+        width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .conteneur{
+        width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .conteneur{
+        width: 1320px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .conteneur{
+        width: 1560px;
+    }
 }
