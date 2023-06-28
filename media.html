@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.5" />
+    <meta keywords="Formation, HTML5 CSS3, RWD" />
+    <meta description="Le site fait durant la formation Webmaster Intermédiaire chez DAWAN " />
+    <title>&copy;DAWAN Formation, HTML5 CSS3, RWD | Le site fait durant la formation Webmaster Intermédiaire chez DAWAN
+    </title>
+    <!-- Commentaires en HTML -->
+    <!-- C'est dans la balise head qu'on va appeler les CSS et écrire ou appeler les fichiers script JS -->
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body id="top">
+    <header>
+        <div class="header conteneur">
+            <h1>Formation Webmaster Intermédiaire</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="conteneur">
+            <ul>
+                <li><a href="./">Accueil</a></li>
+                <li><a href="./article.html">Article</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./media.html">Media</a></li>
+                <li><a href="./animation.html">Animations CSS</a></li>
+                <li><a href="./trucs.html">Des trucs en CSS</a></li>
+                <li><a href="./grid.html">Grid CSS</a></li>
+                <li><a href="./bootstrap.html">Bootstrap</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="conteneur">
+        <section>
+            <article>
+                <header>
+                    <h2>Les média hébergés sur le site</h2>
+                </header>
+                <main>
+                    <h3>L'audio</h3>
+                    <p>
+                        on utilise la balise <code>&lt;audio&gt;</code>.
+                    </p>
+                    <p>
+                        la source de l'audio' peut être directement intégrée dans la balise, attention au format, si le navigateur ne peut pas lire ce format la vidéo ne s'affiche pas
+                    </p>
+                    <figure>
+                        <img src="./images/diablo_02.jpg" />
+                        <audio src="./media/audio/diablo_town.mp3" controls></audio>
+                        <figcaption>
+                            Musique d'ambiance en ville dans le premier jeu vidéo Diablo
+                        </figcaption>
+                    </figure>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Les média hébergés sur le site</h2>
+                </header>
+                <main>
+                    <h3>Les vidéos</h3>
+                    <p>
+                        on utilise la balise <code>&lt;video&gt;</code>.
+                    </p>
+                    <p>
+                        la source de la vidéo peut être directement intégrée dans la balise, attention au format, si le navigateur ne peut pas lire ce format la vidéo ne s'affiche pas
+                    </p>
+                    <video src="./media/videos/Fallout-4-Launch-Trailer.mp4" controls poster="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg"></video>
+                    <p>
+                        Ici la source de la vidéo est intégrée dans des balises sources contenant différents formats de la même vidéo, 
+                        cela permet si le navigateur ne lit pas certains formats de lui permettre d'afficher le format qu'il est capable de lire.
+                    </p>
+                    <video controls>
+                        <source src="./media/videos/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                        <source src="./media/videos/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                    </video>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Les médias hébergés sur un site tier</h2>
+                </header>
+                <main>
+                    <h3>Les vidéos</h3>
+                    <p>
+                        Des sites tels que Youtube et dailymotion donnent la possibilité 
+                        d'incruster leurs vidéos sur nos sites, en utilisant la balise iframe.<br />
+                        L'iframe est une balise qui permet d'appeler une page 
+                        d'un autre site (ou du site actuel) dans un cadre délimité.<br />
+                        Il faut toutefois que le site ciblé autorise les iframes
+                    </p>
+                    <h4>Exemple avec youtube</h4>
+                    <figure class="video ratio-16-9">
+                        <iframe class="video" src="https://www.youtube.com/embed/F1bkk5SsHEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </figure>
+                    <h4>Exemple avec dailymotion</h4>
+                    <figure class="video ratio-16-9">
+                        <iframe class="video" src="https://www.dailymotion.com/embed/video/x1nofw" frameborder="0" type="text/html" allowfullscreen title="Dailymotion Video Player"></iframe>
+                    </figure>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+        </section>
+        <section>
+            <article>
+                <header>
+                    <h2>Les médias hébergés sur un site tier</h2>
+                </header>
+                <main>
+                    <h3>L'audio'</h3>
+                    <h4>Spotify</h4>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3I26roPpJAu06mRIZnkslB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <h4>Soundcloud</h4>
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/975937390&color=%2376b9d5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/mathiasfudala" title="Mathias Fudala" target="_blank" style="color: #cccccc; text-decoration: none;">Mathias Fudala</a> · <a href="https://soundcloud.com/mathiasfudala/18-ha-ha-lemission-marrante-speciale-dedansdehors" title="#18 Ha Ha ! L&#x27;émission marrante *** Spéciale DEDANS/DEHORS ***" target="_blank" style="color: #cccccc; text-decoration: none;">#18 Ha Ha ! L&#x27;émission marrante *** Spéciale DEDANS/DEHORS ***</a></div>
+                    <h4>Bandcamp</h4>
+                    <iframe style="border: 0; width: 350px; height: 208px;" src="https://bandcamp.com/EmbeddedPlayer/album=3828771716/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/track=3188101176/transparent=true/" seamless><a href="https://weswaltz.bandcamp.com/album/more-is-more">More Is More de Wes Waltz</a></iframe>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Iframe</h2>
+                </header>
+                <main>
+                    <ul>
+                        <li><a href="./documents/texte.txt" target="test">Test</a></li>
+                        <li><a href="./documents/CRAM.pdf" target="test">CRAM</a></li>
+                        <li><a href="./article.html" target="test">Article</a></li>
+                        <li><a href="./media/audio/diablo_town.mp3" target="test">Un fichier mp3</a></li>
+                    </ul>
+                    <figure class="video ratio-21-297">
+                        <iframe class="video" name="test" src="./documents/CRAM.pdf"></iframe>
+                    </figure>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+        </section>
+        <div class="top">
+            <a href="#top">en haut</a>
+        </div>
+    </main>
+    <footer>
+        <div class="footer conteneur">
+
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -98,8 +98,16 @@ sélecteur CSS :
     box-sizing: border-box;
 }
 
-img{
+img, video{
     max-width: 100%;
+}
+
+video, audio{
+    background-color: black;
+}
+
+figure{
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -308,6 +316,68 @@ p.radio-check label[for]{
     width: 90%;
 }
 
+.top{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    opacity: 70%;
+}
+
+.cadre{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.rouge{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 0, 0, 1);
+    position: absolute;
+    top:10px;
+}
+
+.verte{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 255, 0, 1);
+    z-index: 23;
+    position: absolute;
+}
+
+.ratio-16-9{
+    padding-bottom: 56.25%;
+}
+
+.ratio-1-1{
+    padding-bottom: 100%;
+}
+
+.ratio-21-297{
+    padding-bottom: 141.5%;
+}
+
+figure.video{
+    position: relative;
+    height: 0;
+}
+
+iframe.video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
 /*
 .footer{
     
@@ -319,6 +389,7 @@ body{
     margin: 0;
     background-color: var(--site-background);
     color: var(--site-primary-color);
+    position: relative;
 }
 
 body > header{
@@ -382,7 +453,7 @@ body main article footer{
     text-align: center;
 }
 
-body main article footer button, .form-button{
+body main article footer button, .form-button, .top{
     padding: 0.5rem 1rem;
     border: 2px solid var(--button-link-color);
     color: var(--button-link-color);
