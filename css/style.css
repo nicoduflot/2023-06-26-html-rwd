@@ -13,6 +13,54 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
 
 */
 
+/*
+
+sélecteur CSS :
+    ATTENTION : en CSS, on impacte tous les éléments correspondants aux sélecteurs écrit
+    
+    sélecteurs simples : balise, identifiant et par classe
+        p                   => tous les éléments p rencontrés dans le document
+                            pas de caractère spécial devant l'élément donc il s'agit d'une balise
+        #special            => l'élément ayant comme attribut id="special"
+                            le caractère # indique qu'on se réfère à l'id
+                            => les id sont uniques dans la page
+        .titreDeChapitre    => les éléments ayant au moins la class="titreDeChapitre" 
+                            le caractère . indique qu'on se réfère à une classe
+                            => ATTENTION : si un élément class="titreDeChapitre toto tata" comme il possède au moins
+                            la classe titreDeChapitre alors il sera trouvé
+    Sélecteur avancés : selon les attributs                                  
+        [data-test]                     => les éléments ayant au moins un attribut nommé data-test
+        [alt]                           => les éléments ayant au moins un attribut alt
+        [data-test="toto"]              => les éléments ayant au moins un attribut nommé data-test="toto"
+        [data-col][data-line]           => les éléments ayant au moins un attribut data-col ET un attribut data-line
+        [data-col="3"][data-line]       => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line
+        [data-col][data-line="2"]       => les éléments ayant au moins un attribut data-col ET un attribut data-line="2"
+        [data-col="3"][data-line="2"]   => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line="2"
+
+    Sélecteur avancés : mélange des sélecteurs simples et ou de sélecteurs avancés
+        h3.titreDeChapitre  => tous les titre h3 ayant la classe titreDeChapitre
+                            si l'élément et la classe sont collés, c'est que l'élément doit avoir au moins cette classe
+        article #special    => un élément avec id="special" enfant direct OU indirect d'un élément article
+                            si l'élément et l'id recherché sont séparés, cela indique une filiation directe ou indirecte
+        main > p            => tous les éléments p enfants directs d'un élément main
+                            le chevron fermant > entre les deux éléments indique une filiation directe.
+        p#special           => un élément p avec id="special"
+        .toto.tata          => un élément ayant au moins les deux classes suivantes toto et tata
+        .toto .tata         => un élément ayant au moins la classe tata enfant direct ou indirect d'un élément ayant au moins la classe toto
+    
+    Pseudo sélecteurs (sélécteur qui permet des "tri" ou des "filtres" sur des sélecteurs )
+        p:nth-of-type(odd)  => tous les paragraphes du document en position impaire
+                            nth-child() le(s) nième(s) enfant(s)
+                            les paramètres : 
+                                odd => impaire - event => paire, Xn => tous les X enfants , Y => le Yème
+                                2n+1
+
+        article:last-child:nth-of-type(4n+3)    => l'article doit être le dernier article et le troisième article d'une ligne de 4
+                                                paramètres :    4n => le nombre d'élément par ligne
+                                                                +3 => le troisième de la ligne
+
+*/
+
 /* déclaration racine : root */
 
 :root{
@@ -221,6 +269,45 @@ p::first-letter:not(form p) {
     border-radius: 0.5rem;
 }
 
+.form form p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form form input[type="text"],
+.form form input[type="email"],
+.form form input[type="tel"], 
+.form form textarea, 
+.form form select{
+    width: 100%;
+}
+
+.form form textarea{
+    height: 150px;
+}
+
+.form form p span{
+    width: 80px;
+    text-align: right;
+}
+
+.form form p input[type="range"]{
+    width: calc( 100% - 90px);
+}
+
+p.radio-check label{
+    width: 100%;
+}
+
+.radio-check input{
+    margin-right: 3%;
+}
+
+p.radio-check label[for]{
+    width: 90%;
+}
+
 /*
 .footer{
     
@@ -295,13 +382,30 @@ body main article footer{
     text-align: center;
 }
 
-body main article footer button{
+body main article footer button, .form-button{
     padding: 0.5rem 1rem;
     border: 2px solid var(--button-link-color);
     color: var(--button-link-color);
     background-color: var(--button-link-background);
     text-transform: uppercase;
     font-family: 'RobotoBold';
+}
+
+.send{
+    background-color: green;
+    color: white;
+}
+
+.send:hover{
+    background-color:rgb(64, 96, 17);
+}
+
+.cancel{
+    background-color: darkorange;
+}
+
+.cancel:hover{
+    background-color: rgb(241, 175, 94);
 }
 
 article main.article{
@@ -375,6 +479,16 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
     .swiper-slide img{
         max-height: 50vh;
     }
+
+    .form form{
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .radio-check input{
+        margin-right: 5%;
+    }
     
 }
 
@@ -383,11 +497,7 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
         width: 720px;
     }
 
-    .form form{
-        width: 680px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    
 }
 
 @media screen and (min-width: 992px) {
