@@ -71,6 +71,12 @@ figure{
 figure figcaption{
     text-align: left;
 }
+/* :: indique qu'on utilise un pseudo-élément */
+
+p::first-letter {
+    font-size: 130%;
+    font-family: 'RobotoBold';
+  }
 
 /* classes */
 
@@ -131,7 +137,7 @@ figure figcaption{
 .information{
     background-color: var(--site-background-25);
 }
-
+/* : indique qu'on utilise une pseudo-classe */
 .information table tr:nth-last-of-type(even){
     background-color: var(--site-background-25);
 }
@@ -182,6 +188,20 @@ figure figcaption{
 
 .table tfoot tr > *{
     border-bottom: 1px solid black;
+}
+
+.spanTable tr > *{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.spanTable tbody tr:nth-of-type(even){
+    background-color: unset;
+}
+
+.spanTable td:nth-of-type(even){
+    background-color: var(--site-background-25);
 }
 
 /*
