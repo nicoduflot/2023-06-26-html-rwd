@@ -73,7 +73,7 @@ figure figcaption{
 }
 /* :: indique qu'on utilise un pseudo-élément */
 
-p::first-letter {
+p::first-letter:not(form p) {
     font-size: 130%;
     font-family: 'RobotoBold';
   }
@@ -129,8 +129,18 @@ p::first-letter {
     text-align: center;
 }
 
+.swiper{
+    height: 40vh;
+}
+
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .swiper-slide img{
-    max-height: 400px;
+    max-height: 30vh;
     margin-bottom: 1.5rem;
 }
 
@@ -202,6 +212,13 @@ p::first-letter {
 
 .spanTable td:nth-of-type(even){
     background-color: var(--site-background-25);
+}
+
+.form form fieldset{
+    border-style: solid;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0.5rem;
 }
 
 /*
@@ -350,11 +367,26 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
         padding-left: var(--goutiere-article);
         padding-right: var(--goutiere-article);
     }
+
+    .swiper{
+        height: 70vh;
+    }
+
+    .swiper-slide img{
+        max-height: 50vh;
+    }
+    
 }
 
 @media screen and (min-width: 768px) {
     .conteneur{
         width: 720px;
+    }
+
+    .form form{
+        width: 680px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -385,6 +417,14 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
         margin-left: var(--goutiere-article);
         width: var(--article-contenu-width);
     }
+
+    .swiper{
+        height: 80vh;
+    }
+
+    .swiper-slide img{
+        max-height: 60vh;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -408,7 +448,7 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
         width: var(--colonne-1-1);
     }
 
-    body > main > section > article:last-child:nth-of-type(3n + 1) main:not(body > main > section > article:last-child:nth-of-type(3n + 1) main.article){
+    body > main > section > article:last-child:nth-of-type(3n + 1) main:not(body > main > section > article:last-child:nth-of-type(3n + 1) main.article):not(body > main > section > article:last-child:nth-of-type(3n + 1) main.form){
         columns: 3;
     }
 
