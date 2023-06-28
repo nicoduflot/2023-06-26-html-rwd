@@ -40,6 +40,8 @@ vw & vh     =>  vw : viewport widthn; vh : viewport height
     --colonne-2-3: calc( 66% - 2 * var(--goutiere-article) );
     --colonne-1-4: calc( 25% - 2 * var(--goutiere-article) );
     --colonne-3-4: calc( 75% - 2 * var(--goutiere-article) );
+    --article-information-width: calc( 350px - 2 * var(--goutiere-article) );
+    --article-contenu-width: calc( 100% - var(--article-information-width) - 2 * var(--goutiere-article));
 }
 
 /* on a généralement quelques règles CSS en début de fichier pour gérer certains réglages par défaut des navigateurs */
@@ -60,6 +62,14 @@ h1, h2, h3, h4, h5, h6{
 
 b, strong{
     font-family: 'RobotoBold';
+}
+
+figure{
+    text-align: center;
+}
+
+figure figcaption{
+    text-align: left;
 }
 
 /* classes */
@@ -100,6 +110,10 @@ b, strong{
     margin-right: auto;
 }
 
+.information h3{
+    text-align: center;
+}
+
 /* surcharge des classes du swiper */
 .carousel{
     padding: 2rem 0.5rem;
@@ -116,6 +130,58 @@ b, strong{
 
 .information{
     background-color: var(--site-background-25);
+}
+
+.information table tr:nth-last-of-type(even){
+    background-color: var(--site-background-25);
+}
+
+.information table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.information table th, .information table td{
+    padding: 0.5rem;
+}
+
+.information table th{
+    vertical-align: top;
+    text-align: left;
+    width: 150px;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table tr > *{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.table td{
+    text-align: right;
+    padding: 2px;
+}
+
+.table tr th:first-child{
+    text-align: left;
+    width: 250px;
+}
+
+.table thead{
+    background-color: var(--site-header-background);
+    color: var(--site-header-color);
+}
+
+.table tbody tr:nth-of-type(even){
+    background-color: var(--site-background-25);
+}
+
+.table tfoot tr > *{
+    border-bottom: 1px solid black;
 }
 
 /*
@@ -201,6 +267,22 @@ body main article footer button{
     font-family: 'RobotoBold';
 }
 
+article main.article{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+main.article .information{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid var(--site-background-25);
+}
+
+main.article .contenu{
+    padding: 0.5rem;
+    border: 3px solid transparent;
+}
+
 body main article footer button:hover{
     color: var(--button-link-background);
     background-color: var(--button-link-color);
@@ -267,6 +349,21 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
     
     body > main > section > article:last-child:nth-of-type(2n + 1){
         width: var(--colonne-1-1);
+    }
+
+    article main.article{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main.article .information{
+        width: var(--article-information-width);
+        margin-right: var(--goutiere-article);
+    }
+    
+    main.article .contenu{
+        margin-left: var(--goutiere-article);
+        width: var(--article-contenu-width);
     }
 }
 
