@@ -127,3 +127,45 @@ aller d'un état à l'autre
    40%   {opacity:0; }
    100% { opacity:1; }
  }
+
+ .dampener{
+    position: relative;
+ }
+
+ .damper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 5px 5px  black;
+    transition: all 1s;
+ }
+
+ .damper h2{
+    font-size: 4rem;
+ }
+
+ .damper:hover{
+    background-color: var(--site-background-25);
+    opacity: 1;
+ }
+
+ .click-change{
+    transition: transform 1s;
+ }
+
+ .flip{
+    transform: rotateY(180deg);
+ }
+
+ #test-focus{
+    transition: transform 1s;
+ }
+
+ #test-focus:focus{
+    transform: rotateY(180deg);
+ }

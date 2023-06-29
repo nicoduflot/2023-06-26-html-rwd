@@ -1,0 +1,121 @@
+.cercle{
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('../images/pip-boy.svg');
+    background-color: brown;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border-width: 3px;
+    border-color: cadetblue;
+    border-style: solid;
+    border-radius: 50%;
+    margin: 2rem;
+}
+
+.vignette{
+    width: 52px;
+    height: 52px;
+    border: 1px solid black;
+    background-image: url('../images/multi-vignettes-sm-01.png');
+    margin: 0.5rem;
+}
+
+.avatar-01{
+    background-position-x: 0;
+    background-position-y: 0;
+}
+
+.avatar-02{
+    background-position-x: 50px;
+    background-position-y: 0;
+}
+
+.avatar-03{
+    background-position-x: 0;
+    background-position-y: 50px;
+}
+
+.avatar-04{
+    background-position-x: 50px;
+    background-position-y: 50px;
+}
+
+.triangle-rouge{
+    width: 0;
+    height: 0;
+    --taille-base: 50px;
+    border-color: transparent;
+    border-style: solid;
+    border-left-width: calc( var(--taille-base) * 0.866);
+    border-top-width: calc( var(--taille-base) / 2);
+    border-bottom-width: calc( var(--taille-base) / 2);
+    border-left-color: red;
+    margin: 2rem;
+}
+
+.test-box-shadow{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 2rem;
+    box-shadow: 0 0 0 10px darkred, 0 0 0 20px darkblue, inset 0 0 0 10px darkgreen, inset 0 0 0 20px darkmagenta;
+    border: 10px solid gold;
+}
+
+.atari{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    margin: 2rem;
+    padding-left: 20px;
+    padding-top: 100px;
+    box-shadow: -10px 0 0 darkred, -20px 0 0 orange, inset 10px 0 0 darkgreen;
+    border-left: 10px solid gold;
+    border-top-left-radius: 50px;
+}
+
+.badge{
+    width: 338px;
+    height: 338px;
+    position: relative;
+    background-color: darkred;
+    border-radius: 50%;
+}
+
+.txtFg{
+    position: absolute;
+    z-index: 4;
+    top: 150px;
+    left: 80px;
+}
+
+.imgFg{
+    position: absolute;
+    width: 338px;
+    height: 338px;
+    border-radius: 50%;
+    background-image: url('../images/pip-boy.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 3;
+}
+
+.imgMg{
+    position: absolute;
+    width: 338px;
+    height: 338px;
+    border-radius: 50%;
+    background-image: url('../images/superposition/logo-pt2.png');
+    z-index: 2;
+}
+.imgBg{
+    position: absolute;
+    width: 338px;
+    height: 338px;
+    border-radius: 50%;
+    background-image: url('../images/superposition/logo-pt1.png');
+    z-index: 1;
+}

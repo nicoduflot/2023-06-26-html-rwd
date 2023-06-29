@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/animate.css" />
     <link rel="stylesheet" href="./css/animation.css" />
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+            let imageChange = document.querySelector('img.click-change');
+            imageChange.addEventListener('click', function(){
+                imageChange.classList.toggle('flip');
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -242,6 +250,12 @@
                             destroyed her competition. She and Gar inspire Sallow to challenge The League and expunge
                             his past.
                         </p>
+                        <figure class="dampener">
+                            <div class="damper">
+                                <h2>HAHAHAHA</h2>
+                            </div>
+                            <img src="./images/city-black-n-white.png" />
+                        </figure>
                         <p>
                             But Kidda and Gar do not realise that the City games are for much more than honour and
                             victory, they will need to fight for their very survival. The Game is played much harder and
@@ -303,10 +317,14 @@
                             <li>Canby, Vincent (23 February 1990). "Review/Film; Clashing Gladiators in the Bloody Sport of a Future Dark Age". The New York Times.</li>
                             <li>Taggart, Frankie (23 September 2016). "'Mad Max' fans descend on post-apocalyptic playground". Yahoo!.</li>                            
                         </ol>
+                        <figure>
+                            <img class="click-change" src="./images/gundam-01-header.png" />
+                        </figure>
                         <h3>
                             External links
                         </h3>
                         <hr />
+                        <input type="text" placeholder="coucou"  id="test-focus" />
                         <ul>
                             <li>The Blood of Heroes at IMDb</li>
                             <li>Salute of the Jugger at Oz Movies</li>

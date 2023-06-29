@@ -520,6 +520,12 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
         width: var(--article-contenu-width);
     }
 
+    main.article .contenu.wide{
+        width: var(--colonne-1-1);
+        margin: 0;background-color: bisque;
+        padding-bottom: 50vh;
+    }
+
     .swiper{
         height: 80vh;
     }
