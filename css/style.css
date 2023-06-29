@@ -1,6 +1,7 @@
 @import url('./edosz.css');
 @import url('./RobotoRegular.css');
 @import url('./RobotoBold.css');
+@import url('./bootstrap-icons.css');
 /*
 Unités de dimension les plus utilisés en web
 
@@ -270,52 +271,6 @@ p::first-letter:not(form p) {
     background-color: var(--site-background-25);
 }
 
-.form form fieldset{
-    border-style: solid;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0.5rem;
-}
-
-.form form p{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.form form input[type="text"],
-.form form input[type="email"],
-.form form input[type="tel"], 
-.form form textarea, 
-.form form select{
-    width: 100%;
-}
-
-.form form textarea{
-    height: 150px;
-}
-
-.form form p span{
-    width: 80px;
-    text-align: right;
-}
-
-.form form p input[type="range"]{
-    width: calc( 100% - 90px);
-}
-
-p.radio-check label{
-    width: 100%;
-}
-
-.radio-check input{
-    margin-right: 3%;
-}
-
-p.radio-check label[for]{
-    width: 90%;
-}
-
 .top{
     width: 100px;
     height: 100px;
@@ -350,32 +305,6 @@ p.radio-check label[for]{
     background-color: rgba(0, 255, 0, 1);
     z-index: 23;
     position: absolute;
-}
-
-.ratio-16-9{
-    padding-bottom: 56.25%;
-}
-
-.ratio-1-1{
-    padding-bottom: 100%;
-}
-
-.ratio-21-297{
-    padding-bottom: 141.5%;
-}
-
-figure.video{
-    position: relative;
-    height: 0;
-}
-
-iframe.video{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    overflow: hidden;
 }
 
 /*
@@ -453,7 +382,7 @@ body main article footer{
     text-align: center;
 }
 
-body main article footer button, .form-button, .top{
+body main article footer button, .top{
     padding: 0.5rem 1rem;
     border: 2px solid var(--button-link-color);
     color: var(--button-link-color);
@@ -551,15 +480,7 @@ media querie : appliquer des style ou des surcharge de style existant selon des 
         max-height: 50vh;
     }
 
-    .form form{
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .radio-check input{
-        margin-right: 5%;
-    }
+    
     
 }
 
