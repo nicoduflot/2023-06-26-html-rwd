@@ -6,15 +6,315 @@
     <title>Exo CV grille</title>
     <link rel="stylesheet" href="./css/exo-cv-grid.css" />
 </head>
-<body>
-    <main>
-        <section class="">
+<body id="upPage">
+    <header>
+        <div class="conteneur">
+            <h1>Nicolas Duflot - Formateur Web</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="conteneur">
+            <ul class="navigation">
+                <li><a href="#civilite" title="Découvrez-moi">Civilité</a></li>
+                <li><a href="#pro" title="Mon expérience">Expérience professionnelles</a></li>
+                <li><a href="#hobbie" title="Ma vie hors du travail">Hobbies</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="conteneur">
+        <section class="grid-civ" id="civilite">
             <!-- civilité présentation scolarité -->
+            <h2 id="title-civ">Découvrez moi</h2>
+            <article class="grid-div">
+                <h2><a href="#upPage" title="Haut de page">Qui suis-je ?</a></h2>
+                <figure>
+                    <img class="identite" src="./images/nicolas-duflot-avatar.svg" />
+                    <figcaption>
+                        Nicolas Duflot, Formateur web fullstack & agilité & développeur web fullstack
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="grid-div">
+                <h2><a href="#upPage" title="Haut de page">Généralités</a></h2>
+                <ul>
+                    <li>43 ans</li>
+                    <li>Permis B</li>
+                    <li>Marié deux enfants</li>
+                    <li>LIlle (59)</li>
+
+                </ul>
+                <h2>Postes Occupés</h2>
+                <ul>
+                    <li class="title">Développeur</li>
+                    <li>Fullstack HTML - CSS - JavaScript - PHP</li>
+                    <li class="title">Formateur </li>
+                    <li>Développement web fullstack</li>
+                    <li>Bureautique (suite office)</li>
+                    <li>Agile (Scrum, Kanban & Product Owner)</li>
+                </ul>
+            </article>
+            <article class="grid-div" id="compTech">
+                <h2>
+                    <a href="#upPage" title="Haut de page">Compétences techniques </a>
+                </h2>
+                <ul>
+                    <li class="title">Intégration web</li>
+                    <li>HTML5/CSS3, Javascript, jQuery, Bootstrap</li>
+                    <li>Langages : HTML, PHP, javascript</li>
+                    <li class="title">SGBD</li>
+                    <li>MySQL</li>
+                    <li class="title">Frameworks</li>
+                    <li>symfony 4 - 5</li>
+                    <li>VuesJs</li>
+                    <li class="title">Gestion des sources (SCM)</li>
+                    <li>Git / Github, Svn</li>
+                    <li class="title">IDE</li>
+                    <li>PHPStorm, Brackets, Dreamweaver, Visual Studio Code</li>
+                    <li class="title">Webdesign</li>
+                    <li>Bonnes connaissances et utilisation régulière d'Illustrator, Photoshop et InDesign</li>
+                    <li>Ainsi que les pendants libres : GIMP et Inkscape.</li>
+                </ul>
+            </article>
+            <article class="grid-div" id="school">
+                <div>
+                    <h2>
+                        <a href="#upPage" title="Haut de page">Scolarité</a>
+                    </h2>
+                    <ul>
+                        <li class="title">1999</li>
+                        <li>Bac Chimie de Laboratoire et Procédés Industriels (CLPI)</li>
+                        <li class="title">2004</li>
+                        <li>BTS informatique de gestion (développement C++ et SGBD)</li>
+                        <li class="title">2016</li>
+                        <li>Licence Conception Réalisation Web ( Web fullstack, webdesign et marketing)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2><a href="#upPage" title="Haut de page">Associations</a></h2>
+                    <ul>
+                        <li class="title">Gentilshommes de la Brette</li>
+                        <li>Escrime médiévale & artistique 5 ans</li>
+                        <li class="title">L'antre du jeu</li>
+                        <li>Jeu de rôle, membre et bénévole sur des manifestations et conventions (Geek Days, Nuit du jeu) depuis 2015</li>
+                        <li class="title">Association Collectif Parasites</li>
+                        <li>Rebooster l'Avesnois en action et manifestation dont un festival 12 ans</li>
+                        <li class="title">Rockabilette</li>
+                        <li>Festival et concerts autour du Rockabilly, bénévole 2 ans</li>
+                    </ul>
+                </div>
+            </article>
         </section>
-        <section class="">
+        <section class="grid-pro" id="pro">
             <!-- expé pro  -->
+            <h2 id="title-pro">Expériences</h2>
+            <article class="grid-div">
+                <h2>
+                    Formateur & développeur web fullstack
+                </h2>
+                <p>
+                    <b>Janvier 2020/Aujourd'hui</b>
+                </p>
+                <ul>
+                    <li class="title">Développeur Web fullstack</li>
+                    <li>Intégration web</li>
+                    <li>HTML5/CSS3, Javascript, jQuery, Bootstrap</li>
+                    <li class="title">Langages</li>
+                    <li>PHP, javascript</li>
+                    <li>SGBD</li>
+                    <li>MySQL</li>
+                    <li class="title">Formateur bureautique</li>
+                    <li>Suite office</li>
+                    <li>Formateur agilité</li>
+                    <li>Scrum</li>
+                    <li>Kanban</li>
+                </ul>
+            </article>
+            <article class="grid-div">
+                <h2>
+                    Mission Développement (Infotel)
+                </h2>
+                <p>
+                    <b>Février 2018/Décembre 2019</b>
+                </p>
+                <ul>
+                    <li class="title">Maintenance des applications du client final</li>
+                    <li>Php, Javascript, Jquery</li>
+                    <li class="title">Migration des technologies client final </li>
+                    <li>Versions Php, Javascript, JQuery</li>
+                    <li class="title">Développement d’applications client final</li>
+                    <li>Php, Javascript, Jquery</li>
+                    <li class="title">Support troisième niveau</li>
+                    <li>Support de l’intranet et du site web client final</li>
+                    <li class="title">Maintenance CMS client</li>
+                    <li>WCM : Web Content Management par IBM</li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>HTML5/CSS3/Bootstrap</li>
+                    <li>PHP 7</li>
+                    <li>Symfony</li>
+                    <li>Javascript</li>
+                    <li>Jquery</li>
+                    <li>IDE VS Code</li>
+                </ul>
+            </article>
+            <article class="grid-div">
+                <h2>
+                    Développeur / Formateur (Jehann)
+                </h2>
+                <p>
+                    <b>Juillet 2017/Mars 2018</b>
+                </p>
+                <ul>
+                    <li class="title">Missions</li>
+                    <li>Projet interne développement pour Jehann</li>
+                    <li>Formateur en développement web</li>
+                    <li>Développement back-end.</li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Bootstrap</li>
+                    <li>Php</li>
+                    <li>Symfony</li>
+                </ul>
+            </article>
+            <article class="grid-div">
+                <h2>
+                    POEC formation Dawan(Pour Jehann)
+                </h2>
+                <p>
+                    <b>Mars/Juin 2017</b>
+                </p>
+                <ul>
+                    <li class="title">Objectif</li>
+                    <li>Formation dans le cadre de l’intégration dans la société Jehann, Langages et technologies du web</li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>HTML 5</li>
+                    <li>CSS 3</li>
+                    <li>Bootstrap</li>
+                    <li>Php</li>
+                    <li>Javascript</li>
+                    <li>JQuery</li>
+                </ul>
+            </article>
+            <article class="grid-div col-xxl-2">
+                <h2>
+                    Stage intégrateur webdesign (La souris magique)
+                </h2>
+                <p>
+                    <b>Avril/Juin 2016</b>
+                </p>
+                <p>
+                    Dans le cadre de l'année de licence Conception Réalisation Web, stage en entreprise de 2 mois.
+                </p>
+                <ul>
+                    <li class="title">Missions</li>
+                    <li>Intégration responsive</li>
+                    <li>Création graphique et logotypage</li>
+                    <li>Développement back-end</li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>HTML 5</li>
+                    <li>CSS 3</li>
+                    <li>Bootstrap</li>
+                    <li>Php</li>
+                    <li>Javascript</li>
+                    <li>Illustrator</li>
+                </ul>
+            </article>
+            <article class="grid-div row-xxl-2">
+                <h2>
+                    Responsable Gestion de production Assistée par Ordinateur pour Stores Discount
+                </h2>
+                <p>
+                    <b>Avril 2013/Avril 2015</b>
+                </p>
+                <ul>
+                    <li class="title">Missions</li>
+                    <li>Récupération données clients, gestion du Datawarehouse (ETL Talend)</li>
+                    <li>Génération planning de prodution (Crystal report)</li>
+                    <li>Développement de l'intranet de la GPAO (Php / MySql)
+                    <li>Maintenance du site <a href="https://www.stores-discount.com/" target="_blank">https://www.stores-discount.com/</a></li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>Développement Php</li>
+                    <li>Intégration HTML / CSS</li>
+                    <li class="title">AMOA pour</li>
+                    <li>Les plannings</li>
+                    <li>L'intranet</li>
+                    <li>Création des interfaces entre les différents acteurs de la production</li>
+                </ul>
+            </article>
+            <article class="grid-div">
+                <h2>
+                    Développeur – intégrateur pour Stores-discount
+                </h2>
+                <p>
+                    <b>Août 2009 – Avril 2013</b>
+                </p>
+                <ul>
+                    <li class="title">Missions</li>
+                    <li>Développement d'applications web en Php</li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>Développement Php</li>
+                    <li>Intégration HTML / CSS</li>
+                </ul>
+            </article>
+            <article class="grid-div">
+                <h2>
+                    Développeur – Intégrateur web (Eudoweb)
+                </h2>
+                <p>
+                    <b>Octobre 2007 - Juillet 2009</b>
+                </p>
+                <ul>
+                    <li class="title">Missions</li>
+                    <li>Développement de plug-in logiciel</li>
+                    <li>Intégration sur le logiciel client</li>
+                    <li>Paramétrage logiciel client</li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>Développement Asp</li>
+                    <li>Intégration HTML / CSS</li>
+                    <li>SQL Server</li>
+                </ul>
+            </article>
+            <article class="grid-div">
+                <h2>
+                    Développeur Intégrateur web Pour Ridespirit
+                </h2>
+                <p>
+                    <b>Mai 2006 – Octobre 2007</b>
+                </p>
+                <ul>
+                    <li class="title">Missions</li>
+                    <li>Développement et intégration du site de e-commerce</li>
+                    <li>
+                        <a href="https://web.archive.org/web/20071201082648/http://www.ridespirit.com:80/home.asp" target="_blank">
+                            Ridespirit (web archive)
+                        </a>
+                    </li>
+                    <li class="title">Technologies/Environnement</li>
+                    <li>Développement Asp</li>
+                    <li>Intégration HTML / CSS</li>
+                    <li>SQL Server</li>
+                    <li>Transact SQL</li>
+                </ul>
+            </article>
+            <article class="grid-div">
+                <h2>
+                    Diverses missions orientées Web
+                </h2>
+                <p>
+                    <b>2002 – 2006</b>
+                </p>
+                <ul>
+                    <li class="title">Interim & Alternance</li>
+                    <li>Développeur intégrateur ASP (Alternance chez Médéric 2002 – 2004)</li>
+                    <li class="title">Société Générale (service RH 2005 - 2006)</li>
+                    <li>Webmaster contenu intranet RH</li>
+                    <li>Administrateur d'application d'auto-évaluation employé</li>
+                    <li>Formateur sur l'application</li>
+                    <li>hotline bilingue (Anglais) sur l'application</li>
+                </ul>
+            </article>
         </section>
-        <section class="">
+        <section class="grid-hobbies" id="hobbie">
             <!-- vie perso & hobbies -->
         </section>
     </main>

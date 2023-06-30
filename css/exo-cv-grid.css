@@ -1,0 +1,279 @@
+@import url("./RobotoRegular.css");
+@import url("./RobotoBold.css");
+:root {
+  font-family: "RobotoRegular";
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  --heading-title-color: white;
+  --header-bg-color: black;
+  --nav-link-color: white;
+  --nav-link-bg: black;
+  --header-bg-color-25: rgba(0, 0, 0, 0.5);
+  --content-link-color: darkred;
+}
+
+/* classe conteneur avec les points de ruptures écrans */
+
+.conteneur {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+/* déclarations générales */
+* {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2rem;
+  ---heading-link: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  text-align: center;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited,
+h4 a:visited,
+h5 a:visited,
+h6 a:visited {
+  color: var(---heading-link);
+  text-decoration: none;
+}
+
+ul a, ul a:visited{
+    text-decoration: none;
+    font-family: 'RobotoBold';
+    color: var(--content-link-color);
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption {
+  text-align: left;
+}
+
+/* classes */
+
+.navigation {
+  line-height: 2rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation a,
+.navigation a:visited {
+  font-family: "RobotoBold";
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: var(--nav-link-color);
+}
+
+.navigation a:hover {
+  color: var(--nav-link-bg);
+  background-color: var(--nav-link-color);
+}
+
+/* grid-civ */
+.grid-civ {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1rem;
+  grid-auto-rows: auto;
+}
+
+.grid-div{
+  /* border: 1px solid black; */
+  padding: 0.5rem;
+}
+
+.identite {
+  max-height: 200px;
+}
+
+/* grid-pro */
+
+.grid-pro {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1rem;
+  grid-auto-rows: auto;
+}
+
+.grid-pro .grid-div {
+  padding: 0.5rem;
+}
+
+/* structure */
+
+body {
+  margin: 0;
+}
+
+body > header {
+  padding: 2rem 0;
+  background-color: var(--header-bg-color);
+  color: var(--heading-title-color);
+}
+
+body > nav {
+  background-color: var(--nav-link-bg);
+}
+
+article ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+article ul li {
+  padding-left: 1rem;
+}
+
+article ul li.title {
+  font-family: "RobotoBold";
+  background-color: var(--header-bg-color-25);
+  padding-left: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+/* media queries */
+
+@media screen and (min-width: 576px) {
+  .conteneur {
+    width: 540px;
+  }
+
+  /* grid-civ */
+  .grid-civ {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #title-civ{
+    grid-column: span 2;
+  }
+
+  #compTech, #school{
+    grid-column: span 2;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .conteneur {
+    width: 720px;
+  }
+
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+    .conteneur {
+        width: 960px;
+    }
+    /* grid-pro */
+    
+    #title-pro{
+        grid-column: span 2;
+    }
+
+    .grid-pro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      grid-auto-rows: auto;
+    }
+
+    #school, #compTech{
+        grid-column: span 1;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+  .conteneur {
+    width: 1140px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .conteneur {
+    width: 1320px;
+  }
+
+  .grid-civ{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+
+  #title-civ{
+    grid-column: span 3;
+  }
+
+  #compTech{
+    grid-column: span 1;
+  }
+
+  #school{
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .grid-pro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    grid-auto-rows: auto;
+  }
+
+  #title-pro{
+    grid-column: span 3;
+  }
+
+  .row-xxl-2{
+    grid-row: span 2;
+  }
+
+  .col-xxl-2{
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .conteneur {
+    width: 1560px;
+  }
+}
