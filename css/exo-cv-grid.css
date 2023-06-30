@@ -10,6 +10,7 @@
   --nav-link-bg: black;
   --header-bg-color-25: rgba(0, 0, 0, 0.5);
   --content-link-color: darkred;
+  ---heading-link: black;
 }
 
 /* classe conteneur avec les points de ruptures écrans */
@@ -35,7 +36,6 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   line-height: 2rem;
-  ---heading-link: black;
 }
 
 h1,
@@ -102,34 +102,22 @@ figcaption {
   background-color: var(--nav-link-color);
 }
 
-/* grid-civ */
-.grid-civ {
-  display: grid;
-  grid-template-columns: 100%;
-  gap: 1rem;
-  grid-auto-rows: auto;
-}
-
 .grid-div{
   /* border: 1px solid black; */
   padding: 0.5rem;
 }
-
-.identite {
-  max-height: 200px;
-}
-
+/* grid-civ */
 /* grid-pro */
 
-.grid-pro {
+.grid-civ, .grid-pro {
   display: grid;
   grid-template-columns: 100%;
   gap: 1rem;
   grid-auto-rows: auto;
 }
 
-.grid-pro .grid-div {
-  padding: 0.5rem;
+.identite {
+  max-height: 200px;
 }
 
 /* structure */

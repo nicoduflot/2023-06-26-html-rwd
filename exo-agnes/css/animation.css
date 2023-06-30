@@ -1,0 +1,171 @@
+/* animation simple : au survol d'un élément */
+
+/* créer la classe apppliqué à l'élément avant le survol */
+
+.translation{
+    transition: box-shadow 0.5s, transform 2s;
+}
+
+.translation:hover{
+    box-shadow: 10px 10px black;
+    transform: translate(10px, -2px);
+}
+
+.scale{
+    transition: transform 0.5s ease-in, background-color 0.5s ease-in;
+}
+
+.scale:hover{
+    transform: scale(1.2);
+    background-color: white!important;
+}
+
+.espace-animation{
+    width: 100%;
+    position: relative;
+    padding-bottom: 30%;
+    background-color: var(--site-background-25);
+}
+
+.cercle-animation{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.animation{
+    position: absolute;
+    animation-name: fleche-qui-bouge; /* le nom qui référence la partie CSS où on définie les images clef de l'animation */
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    /*
+    animation: name duration timing-function delay iteration-count direction;
+    animation: fleche-qui-bouge 3s infinite;
+    */
+}
+
+/*
+fleche-qui-bouge : la déclaration des keyframes (images-clefs comme dans l'animation 2d
+keyframe est là pour déclarer les images clef de l'animation de l'élément, de 0% à 100% du temps déclaré pour l'animation 
+à chaque image clef, on défini des transformations ou des placements dans la page, l'animation "produit" les "images" intervale pour 
+aller d'un état à l'autre
+*/
+
+@keyframes fleche-qui-bouge {
+    0%{
+        transform: rotate(0deg);
+        left: 0%;
+        top: 0%;
+    }
+    50%{
+        transform: rotate(180deg);
+        left: 50%;
+        top: 25%;
+    }
+    75%{
+        top:25%;
+    }
+    100%{
+        left: 0%;
+        top: 0%;
+        transform: rotate(-360deg);
+    }
+}
+
+.cadre{
+    width: 100%;
+    --dark-green: #072620;
+    border: 1px solid var(--dark-green);
+    position: relative;
+    padding: 1rem;
+    height: auto;
+}
+
+.calling{
+    height: 1rem;
+    border: 1px solid var(--dark-green);
+    margin: 0.5rem 0;
+    padding: 2px;
+}
+
+.search-call{
+    background: var(--dark-green);
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    animation: 3s search-call infinite ease-in-out alternate both;
+}
+
+.search-call-2{
+    background: var(--dark-green);
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    animation: 3s search-call infinite ease-in alternate both;
+}
+
+@keyframes search-call {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  .clignotant{
+    animation-duration: .8s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+ }
+
+ @keyframes clignoter {
+   0%   { opacity:1; }
+   40%   {opacity:0; }
+   100% { opacity:1; }
+ }
+
+ .dampener{
+    position: relative;
+ }
+
+ .damper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 5px 5px  black;
+    transition: all 1s;
+ }
+
+ .damper h2{
+    font-size: 4rem;
+ }
+
+ .damper:hover{
+    background-color: var(--site-background-25);
+    opacity: 1;
+ }
+
+ .click-change{
+    transition: transform 1s;
+ }
+
+ .flip{
+    transform: rotateY(180deg);
+ }
+
+ #test-focus{
+    transition: transform 1s;
+ }
+
+ #test-focus:focus{
+    transform: rotateY(180deg);
+ }

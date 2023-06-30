@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.5" />
+    <meta keywords="Formation, HTML5 CSS3, RWD" />
+    <meta description="Le site fait durant la formation Webmaster Intermédiaire chez DAWAN " />
+    <title>&copy;DAWAN Formation, HTML5 CSS3, RWD | Le site fait durant la formation Webmaster Intermédiaire chez DAWAN
+    </title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header conteneur">
+            <h1>Formation Webmaster Intermédiaire</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="conteneur">
+            <ul>
+                <li><a href="./">Accueil</a></li>
+                <li><a href="./article.html">Article</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./media.html">Media</a></li>
+                <li><a href="./animation.html">Animations CSS</a></li>
+                <li><a href="./trucs.html">Des trucs en CSS</a></li>
+                <li><a href="./grid.html">Grid CSS</a></li>
+                <li><a href="./bootstrap.html">Bootstrap</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="conteneur">
+        <section>
+            <article>
+                <header>
+                    <h2>Les formulaires</h2>
+                </header>
+                <hr />
+                <main class="form">
+                    <p>
+                        Les formulaires servent a récupérer des informations pour traitement, par exemple, un serveur php qui pourra les enregistrer en fichier, en bdd, ou les envoyer par mail.
+                    </p>
+                    <p>
+                        Un formulaire se déclare à l'aide de la balise <code>&lt;form&gt;</code>. Il possède des attributs,
+                        dont les plus courants et importants sont : method & action
+                    </p>
+                    <h3>method</h3>
+                    <p>
+                        C'est la méthode d'envoi des informations du formulaire, il en existe deux :
+                    </p>
+                    <ul>
+                        <li>GET : les données sont envoyées associées à des
+                            noms de variables dans l'url de la page de traitement</li>
+                        <li>POST : Les données sont transmises en variables dans
+                            l'entête HTTP.
+                        </li>
+                    </ul>
+                    <p>
+                        Si la méthode n'est pas indiquée dans le formulaire,
+                        c'est GET qui sera utilisé par défaut
+                    </p>
+                    <h3>Action</h3>
+                    <p>
+                        Indique l'url de la page de traitement des données envoyées par le formulaire.
+                        Si action n'est pas précisé, le formulaire considère que c'est la page où il
+                        se trouve qui sera la page de traitement.
+                    </p>
+                    <h3>Notre formulaire</h3>
+                    <form method="get" action="./contact.html">
+                        <fieldset>
+                            <legend>Civilité</legend>
+                            <p>
+                                <label for="nom">Nom :</label> 
+                                <input name="nom" type="text" required placeholder="Votre nom ici" autofocus aria-describedby="info-nom" />
+                            </p>
+                            <div class="info" id="info-nom">
+                                Le nom est un champ obligatoire
+                            </div>
+                            <p>
+                                <label for="prenom">Prénom :</label>
+                                <input name="prenom" type="text" placeholder="Votre prénom ici" />
+                            </p>
+                            <p>
+                                <label for="email">E-mail :</label>
+                                <input type="email" name="email" id="email" placeholder="Entrez votre email" required aria-describedby="info-email" />
+                            </p>
+                            <div class="info" id="info-email">
+                                Votre email doit être de la forme identifiant@societe.domaine
+                            </div>
+                            <p>
+                                <label for="telephone">Téléphone :</label>
+                                <input name="telephone" type="tel" placeholder="Votre téléphone ici" aria-describedby="info-tel" />
+                            </p>
+                            <div class="info" id="info-tel">
+                                Veuillez indiquer par exemple +336 pour un numéro commençant 06 en france.
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Votre demande d'échantillon</legend>
+                            <p>
+                                <label for="besoin">Description de votre besoin :</label>
+                                <textarea name="besoin" placeholder="Décrivez votre besoin"></textarea>
+                            </p>
+                            <p>
+                                <label for="materiaux">Type de tissu</label>
+                                <select name="materiaux">
+                                    <option value="invalid">Choix du type de tissu</option>
+                                    <optgroup label="Toiles occultantes">
+                                        <option value="M1">Occultant M1</option>
+                                        <option value="M2">Occultant M2</option>
+                                        <option value="M3">Occultant M3</option>
+                                    </optgroup>
+                                    <optgroup label="Toiles anti-feu">
+                                        <option value="A1">Anti-feu A1</option>
+                                        <option value="A2">Anti-feu A2</option>
+                                        <option value="A3">Anti-feu A3</option>
+                                    </optgroup>
+                                    <optgroup label="Anti-feu imperméable">
+                                        <option value="B1">Anti-feu B1</option>
+                                        <option value="B2">Anti-feu B2</option>
+                                        <option value="B3">Anti-feu B3</option>
+                                    </optgroup>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="couleur">Couleur</label>
+                                <input type="color" name="couleur" id="couleur" aria-describedby="info-couleur" />
+                                <span id="colorSelected">#000000</span>
+                            </p>
+                            <div class="info " id="info-couleur">
+                                Dans ce champs, entrez l'adresse de votre site web.
+                            </div>
+                            <p>
+                                <label for="luminosite">Luminosité</label>
+                                <input type="range" name="luminosite" id="luminosite" min="0" max="5" step="0.5"
+                                    aria-describedby="info-luminosite" />
+                                <span id="lumSelected">2.5</span>
+                            </p>
+                            <div class="info " id="info-luminosite">
+                                Dans ce champs, indiquez la luminosité du site : 0 pour très sombre à 5 pour très
+                                lumineux.
+                            </div>
+                            <p>
+                                <label for="dateLimiteEnvoi">Date Limite</label>
+                                <input type="date" name="dateLimiteEnvoi" id="dateLimiteEnvoi"
+                                    aria-describedby="info-dateLimiteEnvoi" />
+                            </p>
+                            <div class="info " id="info-dateLimiteEnvoi">
+                                Dans ce champs, indiquez la date après laquelle vous voulez l'échantillon
+                            </div>
+                            <p class="radio-check">
+                                <label>
+                                    Les moyens pour vous contacter
+                                </label>
+                                <input type="checkbox" name="contact-mail" id="contact-mail" />
+                                <label for="contact-mail">Par email</label>
+                                <input type="checkbox" name="contact-telephone" id="contact-telephone" />
+                                <label for="contact-telephone">Par téléphone</label>
+                                <input type="checkbox" name="contact-courrier" id="contact-courrier" />
+                                <label for="contact-courrier">Par courrier</label>
+                            </p>
+                            <p class="radio-check">
+                                <label>La demande est pour :</label>
+                                <input type="radio" name="type-personne" id="personne-physique" value="physique" checked
+                                    aria-checked="true" />
+                                <label for="personne-physique">Personne physique</label>
+                                <input type="radio" name="type-personne" id="personne-morale" value="morale" />
+                                <label for="personne-morale">Personne morale</label>
+                            </p>
+                        </fieldset>
+                        <input name="cache" type="hidden" value="info cachée à la vue de l'utilisateur" />
+                        <p>
+                            <button class="form-button send" name="envoi" value="Envoi" type="submit">Soumettre la demande</button>
+                            <button class="form-button cancel" name="envoi" type="reset">Vider le formulaire</button>
+                        </p>
+                    </form>
+                </main>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="footer conteneur">
+
+        </div>
+    </footer>
+</body>
+
+</html>

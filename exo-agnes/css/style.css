@@ -1,0 +1,580 @@
+@import url('./edosz.css');
+@import url('./RobotoRegular.css');
+@import url('./RobotoBold.css');
+@import url('./bootstrap-icons.css');
+@import url('./SatifyRegular.css');
+/*
+Unités de dimension les plus utilisés en web
+
+px          =>  Pixel
+em          =>  cadratin : unité de mesure en print sur les presses. 
+                le cadratin se calcul part rapport à la taille de la police dans l'élément parent
+rem         =>  cadratin racine : se calcul part rapport à la taille de la police dans l'élément racine
+%           =>  Pourcentage, de l'espace disponible autour de l'élément
+vw & vh     =>  vw : viewport widthn; vh : viewport height
+
+*/
+
+/*
+
+sélecteur CSS :
+    ATTENTION : en CSS, on impacte tous les éléments correspondants aux sélecteurs écrit
+    
+    sélecteurs simples : balise, identifiant et par classe
+        p                   => tous les éléments p rencontrés dans le document
+                            pas de caractère spécial devant l'élément donc il s'agit d'une balise
+        #special            => l'élément ayant comme attribut id="special"
+                            le caractère # indique qu'on se réfère à l'id
+                            => les id sont uniques dans la page
+        .titreDeChapitre    => les éléments ayant au moins la class="titreDeChapitre" 
+                            le caractère . indique qu'on se réfère à une classe
+                            => ATTENTION : si un élément class="titreDeChapitre toto tata" comme il possède au moins
+                            la classe titreDeChapitre alors il sera trouvé
+    Sélecteur avancés : selon les attributs                                  
+        [data-test]                     => les éléments ayant au moins un attribut nommé data-test
+        [alt]                           => les éléments ayant au moins un attribut alt
+        [data-test="toto"]              => les éléments ayant au moins un attribut nommé data-test="toto"
+        [data-col][data-line]           => les éléments ayant au moins un attribut data-col ET un attribut data-line
+        [data-col="3"][data-line]       => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line
+        [data-col][data-line="2"]       => les éléments ayant au moins un attribut data-col ET un attribut data-line="2"
+        [data-col="3"][data-line="2"]   => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line="2"
+
+    Sélecteur avancés : mélange des sélecteurs simples et ou de sélecteurs avancés
+        h3.titreDeChapitre  => tous les titre h3 ayant la classe titreDeChapitre
+                            si l'élément et la classe sont collés, c'est que l'élément doit avoir au moins cette classe
+        article #special    => un élément avec id="special" enfant direct OU indirect d'un élément article
+                            si l'élément et l'id recherché sont séparés, cela indique une filiation directe ou indirecte
+        main > p            => tous les éléments p enfants directs d'un élément main
+                            le chevron fermant > entre les deux éléments indique une filiation directe.
+        p#special           => un élément p avec id="special"
+        .toto.tata          => un élément ayant au moins les deux classes suivantes toto et tata
+        .toto .tata         => un élément ayant au moins la classe tata enfant direct ou indirect d'un élément ayant au moins la classe toto
+    
+    Pseudo sélecteurs (sélécteur qui permet des "tri" ou des "filtres" sur des sélecteurs )
+        p:nth-of-type(odd)  => tous les paragraphes du document en position impaire
+                            nth-child() le(s) nième(s) enfant(s)
+                            les paramètres : 
+                                odd => impaire - event => paire, Xn => tous les X enfants , Y => le Yème
+                                2n+1
+
+        article:last-child:nth-of-type(4n+3)    => l'article doit être le dernier article et le troisième article d'une ligne de 4
+                                                paramètres :    4n => le nombre d'élément par ligne
+                                                                +3 => le troisième de la ligne
+
+*/
+
+/* déclaration racine : root */
+
+:root{
+    font-family: 'RobotoRegular', Arial, Helvetica, sans-serif;
+    /* on peut créer des variables en CSS */
+    --heading-font: 'SatisfyRegular';
+    --site-background: white;
+    --site-primary-color: black;
+    --site-header-background: #05b46b;
+    --site-header-color: white;
+    --nav-link-background: var(--site-header-background);
+    --nav-link-color: var(--site-header-color);
+    --site-footer-background: var(--site-header-background);
+    --site-footer-color: var(--site-header-color);
+    --goutiere-article: 0.5rem;
+    --button-link-background: var(--site-header-color);
+    --button-link-color: var(--site-header-background);
+    --site-background-25: rgba(0, 0, 0, 0.25);
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    --swiper-theme-color: var(--site-header-background);
+    --colonne-1-1: 100%;
+    --colonne-1-2: calc( 50% - 2 * var(--goutiere-article) );
+    --colonne-1-3: calc( 33% - 2 * var(--goutiere-article) );
+    --colonne-2-3: calc( 66% - 2 * var(--goutiere-article) );
+    --colonne-1-4: calc( 25% - 2 * var(--goutiere-article) );
+    --colonne-3-4: calc( 75% - 2 * var(--goutiere-article) );
+    --article-information-width: calc( 350px - 2 * var(--goutiere-article) );
+    --article-contenu-width: calc( 100% - var(--article-information-width) - 2 * var(--goutiere-article));
+}
+
+/* on a généralement quelques règles CSS en début de fichier pour gérer certains réglages par défaut des navigateurs */
+/* déclarations générales */
+*{
+    box-sizing: border-box;
+}
+
+img, video{
+    max-width: 100%;
+}
+
+video, audio{
+    background-color: black;
+}
+
+figure{
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--heading-font);
+    margin: 0;
+    letter-spacing: 0.08rem;
+}
+
+b, strong{
+    font-family: 'RobotoBold';
+}
+
+figure{
+    text-align: center;
+}
+
+figure figcaption{
+    text-align: left;
+}
+/* :: indique qu'on utilise un pseudo-élément */
+
+/*p::first-letter:not(form p) {
+    font-size: 130%;
+    font-family: 'RobotoBold';
+  }
+*/
+/* classes */
+
+.content-width{
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+.border-width{
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.deuxEm{
+    font-size: 2em;
+    margin: 2rem;
+    border: 1px solid black;
+}
+
+.deuxRem{
+    font-size: 2rem;
+    margin: 2rem;
+    border: 1px solid black;
+}
+
+.header, .footer, body section article{
+    padding: var(--goutiere-article);
+}
+
+.conteneur{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.information h3{
+    text-align: center;
+}
+
+/* surcharge des classes du swiper */
+.carousel{
+    padding: 2rem 0.5rem;
+}
+
+.center-swiper{
+    text-align: center;
+}
+
+.swiper{
+    height: 40vh;
+}
+
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img{
+    max-height: 30vh;
+    margin-bottom: 1.5rem;
+}
+
+.information{
+    background-color: var(--site-background-25);
+}
+/* : indique qu'on utilise une pseudo-classe */
+.information table tr:nth-last-of-type(even){
+    background-color: var(--site-background-25);
+}
+
+.information table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.information table th, .information table td{
+    padding: 0.5rem;
+}
+
+.information table th{
+    vertical-align: top;
+    text-align: left;
+    width: 150px;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table tr > *{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.table td{
+    text-align: right;
+    padding: 2px;
+}
+
+.table tr th:first-child{
+    text-align: left;
+    width: 250px;
+}
+
+.table thead{
+    background-color: var(--site-header-background);
+    color: var(--site-header-color);
+}
+
+.table tbody tr:nth-of-type(even){
+    background-color: var(--site-background-25);
+}
+
+.table tfoot tr > *{
+    border-bottom: 1px solid black;
+}
+
+.spanTable tr > *{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.spanTable tbody tr:nth-of-type(even){
+    background-color: unset;
+}
+
+.spanTable td:nth-of-type(even){
+    background-color: var(--site-background-25);
+}
+
+.top{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    opacity: 70%;
+}
+
+.cadre{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.rouge{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 0, 0, 1);
+    position: absolute;
+    top:10px;
+}
+
+.verte{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 255, 0, 1);
+    z-index: 23;
+    position: absolute;
+}
+
+/*
+.footer{
+    
+}
+*/
+
+/* structure */
+body{
+    margin: 0;
+    background-color: var(--site-background);
+    color: var(--site-primary-color);
+    position: relative;
+}
+
+body > header{
+    background-color: var(--site-header-background);
+    color: var(--site-header-color);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(178,255,110,0.8435749299719888) 99%);
+}
+
+body > nav{
+    background-color: var(--nav-link-background);
+}
+
+body > nav ul{
+    list-style-type:none;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    margin: 0;
+    line-height: 2.5rem;
+}
+
+body > nav ul li{
+    border-bottom: 1px solid var(--nav-link-color);
+}
+
+body > nav ul li:last-child{
+    border-bottom-color: transparent;
+}
+
+body > nav ul li:last-child:hover{
+    border-bottom-color: var(--nav-link-background);
+}
+
+body > nav ul li a, body > nav ul li a:visited{
+    display: block;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    padding-left: 1rem;
+}
+
+body > nav ul li a:hover, body > nav ul li a:focus{
+    color: var(--nav-link-background);
+    background-color: var(--nav-link-color);
+}
+
+body > main > section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body > main > section > article{
+    width: 100%;
+    /*border: 1px solid black;*/
+    margin: var(--goutiere-article);
+}
+
+body main article header{
+    margin-bottom: 1rem;
+}
+
+body main article footer{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+body main article footer button, .top{
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--button-link-color);
+    color: var(--button-link-color);
+    background-color: var(--button-link-background);
+    text-transform: uppercase;
+    font-family: 'RobotoBold';
+}
+
+.send{
+    background-color: green;
+    color: white;
+}
+
+.send:hover{
+    background-color:rgb(64, 96, 17);
+}
+
+.cancel{
+    background-color: darkorange;
+}
+
+.cancel:hover{
+    background-color: rgb(241, 175, 94);
+}
+
+article main.article{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+main.article .information{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid var(--site-background-25);
+}
+
+main.article .contenu{
+    padding: 0.5rem;
+    border: 3px solid transparent;
+}
+
+body main article footer button:hover{
+    color: var(--button-link-background);
+    background-color: var(--button-link-color);
+}
+
+body > footer{
+    background-color: var(--site-footer-background);
+    color: var(--site-footer-color);
+}
+
+/* 
+media querie : appliquer des style ou des surcharge de style existant selon des paramètres tels que 
+- orientation de l'affichage
+- largeur minimale ou maximale de l'écran
+- affichage pour l'écran ou l'impression
+
+*/
+
+@media print {
+    body > nav, body > footer, button{
+        display: none;
+    }
+
+    body{
+        font-family: serif;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .conteneur{
+        width: 540px;
+    }
+
+    body > nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    body > nav ul li{
+        border-bottom-color: var(--nav-link-background);
+    }
+
+    body > nav ul li a{
+        padding-left: var(--goutiere-article);
+        padding-right: var(--goutiere-article);
+    }
+
+    .swiper{
+        height: 70vh;
+    }
+
+    .swiper-slide img{
+        max-height: 50vh;
+    }
+
+    
+    
+}
+
+@media screen and (min-width: 768px) {
+    .conteneur{
+        width: 720px;
+    }
+
+    
+}
+
+@media screen and (min-width: 992px) {
+    .conteneur{
+        width: 960px;
+    }
+
+    body > main > section > article{
+        width: var(--colonne-1-2);
+    }
+    
+    body > main > section > article:last-child:nth-of-type(2n + 1){
+        width: var(--colonne-1-1);
+    }
+
+    article main.article{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main.article .information{
+        width: var(--article-information-width);
+        margin-right: var(--goutiere-article);
+    }
+    
+    main.article .contenu{
+        margin-left: var(--goutiere-article);
+        width: var(--article-contenu-width);
+    }
+
+    main.article .contenu.wide{
+        width: 100%;
+        margin: 0;
+        padding-bottom: 50vh;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .swiper{
+        height: 80vh;
+    }
+
+    .swiper-slide img{
+        max-height: 60vh;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .conteneur{
+        width: 1140px;
+    }
+    
+    body > main > section > article:last-child:nth-of-type(2n + 1){
+        width: var(--colonne-1-3);
+    }
+
+    body > main > section > article{
+        width: var(--colonne-1-3);
+    }
+
+    body > main > section > article:last-child:nth-of-type(3n + 2){
+        width: var(--colonne-2-3);
+    }
+    
+    body > main > section > article:last-child:nth-of-type(3n + 1){
+        width: var(--colonne-1-1);
+    }
+
+    body > main > section > article:last-child:nth-of-type(3n + 1) main:not(body > main > section > article:last-child:nth-of-type(3n + 1) main.article):not(body > main > section > article:last-child:nth-of-type(3n + 1) main.form){
+        columns: 3;
+    }
+
+}
+
+@media screen and (min-width: 1400px) {
+    .conteneur{
+        width: 1320px;
+    }
+
+}
+
+@media screen and (min-width: 1600px) {
+    .conteneur{
+        width: 1560px;
+    }
+}
