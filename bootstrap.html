@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo bootstrap</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <script src="./js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./css/custom-bootstrap.css" />
+    
+</head>
+
+<body>
+    <header class="bg-dark text-white">
+        <div class="container">
+            <h1 class="mb-0">Formation Webmaster Intermédiaire</h1>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUser" aria-controls="navbarUser" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarUser">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavBar" aria-controls="mainNavBar" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <nav>
+        <div>
+            <ul>
+                <li><a href="./">Accueil</a></li>
+                <li><a href="./article.html">Article</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./media.html">Media</a></li>
+                <li><a href="./animation.html">Animations CSS</a></li>
+                <li><a href="./trucs.html">Des trucs en CSS</a></li>
+                <li><a href="./grid.html">Grid CSS</a></li>
+                <li><a href="./bootstrap.html">Bootstrap</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <section class="row">
+            <article>
+                <header>
+                    <h2>HTML : les balises contenu de texte</h2>
+                </header>
+                <main>
+                    <p>
+                        Le texte doit toujours être compris dans des balises de contenus de type paragraphes, comme des
+                        bloc de citation, tu texte préformaté, etc.<br />
+                        La balise <code>&lt;br /&gt;</code> permet un retour chariot au sein d'un paragraphe.
+                    </p>
+                    <p>
+                        Les balises de contenus peuvent être en affichage bloc <code>display: block</code>, c'est à dire
+                        qu'elles prennent tout l'espace disponible en largeur, et d'autre qui don <code>inline</code>,
+                        elle "entourent" le contenu et servent a appliquer des styles CSS, soit prédéterminés comme
+                        <code>&lt;code&gt;</code> ou <code>&lt;b&gt;</code>, etc.
+                    </p>
+                    <p>
+                        Attention, des balises pour écrire en gras ou en italique, il en existe plusieurs, et c'est la
+                        porté référencement qui sera impacté.
+                    </p>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>D'autre balises de paragraphe</h2>
+                </header>
+                <main>
+                    <p>
+                        Soit on utilise <b><code>&lt;b&gt;</code></b>, pour <i>bold</i> (gras) soit on utilise
+                        <strong><code>&lt;strong&gt;</code></strong>.
+                    </p>
+                    <p>
+                        Il existe la même différence entre <i><code>&lt;i&gt;</code></i> (italique) et
+                        <em><code>&lt;em&gt;</code></em> (emphase).
+                    </p>
+                    <blockquote>
+                        <q><cite>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. Harum ipsa
+                                fugit molestiae quod,</cite></q><br />
+                        nisi consectetur tenetur voluptates vel ab <b>eaque</b> soluta velit commodi eum ipsam nostrum
+                        cumque neque dolores cum!
+                    </blockquote>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>D'autres balises de contenu et de texte</h2>
+                </header>
+                <main>
+                    <p>
+                        <q>I'm Batman</q>, <cite>The dark knight</cite>
+                    </p>
+                    <p>
+                        Autrefois, on utilisait la balise <code>&lt;font&gt;</code>, qui est <font color="#8B0000"
+                            size="3" face="Arial">décommissionnée</font>
+                    </p>
+                    <pre>
+Lorem ipsum dolor sit 
+amet consectetur adipisicing 
+elit. Vel quibusdam facere 
+nemo, pariatur illo dolorem 
+quo soluta qui saepe dicta 
+molestiae. Architecto et 
+sed aspernatur, incidunt 
+quod tempore. Ducimus, modi.
+                    </pre>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>D'autres balises sur le texte</h2>
+                </header>
+                <main>
+                    <p>
+                        H<sub>2</sub>SO<sub>4</sub><sup>2-</sup>
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet <small>consectetur</small> adipisicing elit. Deserunt eligendi
+                        asperiores quos maxime explicabo non nam dolores aliquid molestias vitae harum provident porro,
+                        quam corrupti. At esse accusantium consequuntur alias.
+                    </p>
+                    <p>
+                        En web, on ne <u>souligne jamais du texte</u> sauf s'il s'agit d'un lien, les visiteurs
+                        pourraient confondre avec un lien et tenrer de cliquer dessus, on peut aussi <s>biffer</s> les
+                        mots ou les <mark>surligner au marqueur fluo</mark>.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, minima recusandae!
+                        Necessitatibus obcaecati explicabo a. Repellat, vel blanditiis dignissimos maiores soluta cum
+                        dicta, doloribus beatae, totam tempora accusantium cupiditate ratione.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores minus, sunt ad tempora soluta
+                        quasi quae illo quos porro officiis consectetur alias, animi cumque nam quis iusto sequi? Autem,
+                        fuga?
+                    </p>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+        </section>
+        <section>
+            <article>
+                <header>
+                    <h2>Les médias images</h2>
+                </header>
+                <main>
+                    <h3>La balise img</h3>
+                    <p>
+                        Par défaut, on utlise la balise <code>&lt;img src="" alt="" /&gt;</code>
+                        <img src="./images/Batman-The-animated-serie.jpg" alt="image de batman" />
+                    </p>
+                    <p>
+                        Depuis HTML5, il existe des balises qui permettent de "préparer" le terrain aux images, des
+                        conteneurs qui encapsuleront l'image et donneront aussi la possibilité d'avoir une légende
+                        associée à l'image.
+                    </p>
+                    <figure>
+                        <img src="./images/260px-Bruce_Timm_by_Gage_Skidmore.jpg" alt="Bruce Timm" />
+                        <figcaption>
+                            Bruce Timm à la comicon San Diego sur le remake de Batman the animated series
+                        </figcaption>
+                    </figure>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <h3>La balise picture</h3>
+                    <p>
+                        Une autre balise permet des affichage d'image selon l'affichage de l'appareil :
+                        <code>&lt;picture&gt;</code>.
+                    </p>
+                    <picture>
+                        <source srcset="./images/260px-Bruce_Timm_by_Gage_Skidmore.jpg" media="(min-width: 540px)">
+                        <img src="./images/10.12.12TerryPratchettByLuigiNovi1.jpg" />
+                    </picture>
+                    <p>
+                        par défaut les images d'affiche au maximum de leur largeur et hauteur. Si on change la hauteur
+                        et la largeur sans garder l'homothétie, l'image sera écraée en hauteur ou en largeur.
+                    </p>
+                    <img src="./images/batman_tas.jpg" width="200" />
+                    <p>
+                        en revanche, si on ne donne que la hauteur ou que la largeur, le navigateur s'occupe de calculer
+                        l'homothétie.
+                    </p>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Problèmes courant en CSS</h2>
+                </header>
+                <main>
+                    <p>
+                        Les tailles des éléments sont définis par défaut sur le contenu des éléments, c'est à dirs que
+                        si je défini une div des 200px de large, avec une marge intérieure de 10px et une pordure de 1px
+                        de large, la place totle de l'élément sur l'écran sera de :
+                        200px + 10px + 10px + 1px + 1px (contenu + marge intérieur gauche + marge intérieur droite +
+                        largeur bordure à gauche + largeur bordure à droite ) => 222px.<br />
+                        c'est la propriété css box-sizing qui est à 'content-box' par défaut.<br />
+                        Pour éviter cela, on appliquera 'border-box' à tous les éléments grace au caractère spécial *
+                        dans la déclaration CSS.
+                    </p>
+                    <div>
+                        Content box : <br />
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis commodi vel dolores esse.
+                    </div>
+                    <div>
+                        Border box : <br />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsam molestias architecto.
+                    </div>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Titre</h2>
+                </header>
+                <main>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur asperiores accusamus
+                        repellendus necessitatibus porro error tempora dolor, iusto nesciunt facilis non eligendi
+                        voluptatem distinctio dicta sed totam ex quia repellat.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet <small>consectetur</small> adipisicing elit. Deserunt eligendi
+                        asperiores quos maxime explicabo non nam dolores aliquid molestias vitae harum provident porro,
+                        quam corrupti. At esse accusantium consequuntur alias.
+                    </p>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div>
+
+        </div>
+    </footer>
+</body>
+
+</html>
